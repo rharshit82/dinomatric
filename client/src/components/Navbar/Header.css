@@ -81,6 +81,7 @@
   align-items: center;
 }
 
+
 .Navbars ul {
   color: white;
   padding-left: 0;
@@ -92,10 +93,12 @@
   display: inline-block;
   padding: 0 20px;
   font-size: 17px;
+  
 }
 
-.Navbars ul li:last-child {
-  display: none;
+.Navbars ul li a{
+  text-decoration: none;
+  color: black;
 }
 
 .searchBox {
@@ -161,9 +164,7 @@
     display: block;
     transition: 1.5s;
   }
-  .Navbars ul li:last-child {
-    display: block;
-  }
+  
   .Navbars ul li {
     display: block;
     width: auto;

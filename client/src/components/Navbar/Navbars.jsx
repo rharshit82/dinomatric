@@ -18,28 +18,27 @@ const Navbars = () => {
 
   return (
     <div className={`Navbars ${show ? "ulsh" : ""}`}>
-      <div className="containerss">
-        <div>
-        <Button onClick={navShow} className="menU" color="primary">
-          <MenuIcon/>
-        </Button>
-        </div>    
-        <div>
-        <ul>
-            <li>
-              <Link to="/">Home</Link>
+        <div className="containerss">
+           <Button onClick={navShow} className="menU" color="primary">
+             <MenuIcon/>
+            </Button>
+
+         <ul>
+            <li className="navlinks">
+              <Link to="/dinofun">DinoBlog</Link>
             </li>
-            <li>
-              <Link to="/dinodrawing">DinoDrawing</Link>
+            <li className="navlinks">
+              <Link to="/dinodrawing">Dino Drawing</Link>
             </li>
-            <li>
-              <Link to="/chromedino">ChromeDino</Link>
+            <li className="navlinks">
+              <Link to="/chromedino">Chrome Dino</Link>
             </li>
-            <li>
+            <li className="navlinks">
               <Link to="/dinofun">DinoFun</Link>
             </li>
-          </ul>
-          </div>  
+           
+         </ul>  
+
         <div className={`searchBox ${Active ? "inputb" : ""}`}>
           <i className="searchIcon" onClick={onSearch}>
             <SearchIcon />

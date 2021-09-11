@@ -36,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
 main{
-  min-height: 30rem;
+  min-height: 35rem;
 }
