@@ -1,10 +1,17 @@
 import React from 'react'
-// import Header from '../Navbar/Header';
-// import Footer from '../Footer/Footer';
-
+import {LinkContainer} from 'react-router-bootstrap'
+import { useAuth0 } from "@auth0/auth0-react";
 const HomeScreen = () => {
+  const { user, isAuthenticated } = useAuth0();
+
     return (
         <>
+         {isAuthenticated && (
+      <div> 
+        <h2>Hi {user.name}</h2> <br />
+        <LinkContainer to='/humanblog'><h3>Go to Blog</h3></LinkContainer>
+      </div>
+          )}
         <iframe
         id='playlistiframe'
         width='350'

@@ -7,6 +7,7 @@ import Board from './components/whiteboard/board/Board';
 import ChromeDino from './screens/ChromeDino/ChromeDino';
 import DinoFun from './screens/DinoFun/DinoFun'
 import HumanBlog from './screens/HumanBlog/HumanBlog';
+import AddPostScreen from './screens/AddPost/AddPostScreen';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/chromedino' component={() => <ChromeDino />} />
           <Route exact path='/dinofun' component={() => <DinoFun />} />
           <Route exact path='/humanblog' component={() => <HumanBlog />} />
+          <Route exact path='/humanblog/addpost' component={() => <AddPostScreen />} />
         </Switch>
       </main>
       <footer>

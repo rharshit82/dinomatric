@@ -8,6 +8,7 @@ const apiRoutes = require('./routes/apiRoutes')
 const db = require('./db/db')
 
 require('dotenv').config()
+app.use(express.json())
 
 db()
 io.on('connection', onConnection);
