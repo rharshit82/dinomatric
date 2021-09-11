@@ -3,6 +3,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import MenuIcon from '@material-ui/icons/Menu';
 import "./Header.css";
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Navbars = () => {
   const [Active, setActive] = useState(false);
@@ -24,11 +25,11 @@ const Navbars = () => {
           {/* <p>Click</p> */}
         </Button>
         <ul>
-          <li>Home</li>
-          <li>DinoDrawing</li>
-          <li>Chrome Dino</li>
-          <li>Dino Fun</li>
-          <li>Dino Blog</li>
+          <LinkContainer to='/dinodrawing'> <li> DinoDrawing</li> </LinkContainer>
+          <LinkContainer to='/dinodrawing'> <li> DinoDrawing</li> </LinkContainer>
+          <LinkContainer to='/dinodrawing'> <li> DinoDrawing</li> </LinkContainer>
+          <LinkContainer to='/dinodrawing'> <li> DinoDrawing</li> </LinkContainer>
+          <LinkContainer to='/dinodrawing'> <li> DinoDrawing</li> </LinkContainer>
         </ul>
         <div className={`searchBox ${Active ? "inputb" : ""}`}>
           <i className="searchIcon" onClick={onSearch}>
