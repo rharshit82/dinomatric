@@ -1,39 +1,42 @@
-import React, { useState, useEffect } from 'react'
-import { Form, Button } from 'react-bootstrap'
-import axios from 'axios'
-import { useHistory } from 'react-router-dom'
-import {LinkContainer} from 'react-router-bootstrap'
+import React, { useState, useEffect } from "react";
+import { Form} from "react-bootstrap";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+
+import { LinkContainer } from "react-router-bootstrap";
+import "./Addpost.css";
+
+
+
 const AddPostScreen = () => {
-  const history = useHistory()
-  const [formData, setFormData] = useState({ title: '', content: '' })
-  const [postAdded,setPostAdded] = useState(false)
+  const history = useHistory();
+  const [formData, setFormData] = useState({ title: "", content: "" });
+  const [postAdded, setPostAdded] = useState(false);
   const addPost = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const post = await axios.post(
-        '/api/add_post',
-        {
-          title: formData.title,
-          content: formData.content,
-        },
-      )
+      const post = await axios.post("/api/add_post", {
+        title: formData.title,
+        content: formData.content,
+      });
       if (post.status === 201) {
-        setPostAdded(true)
+        setPostAdded(true);
       }
     } catch (err) {
-      const msg = err.response ? err.response.data.message : err
+      const msg = err.response ? err.response.data.message : err;
     }
-  }
+  };
   return (
-    <div id='mt'>
-      <LinkContainer to='/humanblog'><h2>Go to Human Blog</h2></LinkContainer>
-      <h3 className='text-center'>Add new Post</h3>
-      <Form className='w-75 m-auto text-center' onSubmit={addPost}>
-        <Form.Group className='my-2' controlId='title'>
-          <Form.Label>Title</Form.Label>
+    <div id="mt" className="mtt">
+      <h3 className="my-3">Add new Post</h3>
+      <hr className="horizontal" />
+      <Form className="w-75 m-auto text-center my-4" onSubmit={addPost}>
+        <Form.Group className="my-2" controlId="title">
+          <Form.Label className="addtitle">Title</Form.Label>
           <Form.Control
-            type='text'
-            placeholder='Enter Post Title'
+            type="text"
+            placeholder="Enter Post Title"
             value={formData.title}
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
@@ -41,12 +44,12 @@ const AddPostScreen = () => {
           />
         </Form.Group>
 
-        <Form.Group className='my-2' controlId='content'>
-          <Form.Label>Content</Form.Label>
+        <Form.Group className="my-2" controlId="content">
+          <Form.Label className="addtitle">Content</Form.Label>
           <Form.Control
-            as='textarea'
+            as="textarea"
             rows={8}
-            placeholder='Enter Content'
+            placeholder="Enter Content"
             value={formData.content}
             onChange={(e) =>
               setFormData({ ...formData, content: e.target.value })
@@ -54,13 +57,17 @@ const AddPostScreen = () => {
           />
         </Form.Group>
 
-        <Button className='mt-3' variant='primary' type='submit'>
+        <Button variant="outlined" type="submit" >
           Submit
         </Button>
       </Form>
-      {postAdded?(<div><h3>Post Added Successfully</h3></div>):null}
+      {postAdded ? (
+        <div>
+          <h3>Post Added Successfully</h3>
+        </div>
+      ) : null}
     </div>
-  )
-}
+  );
+};
 
-export default AddPostScreen
+export default AddPostScreen;

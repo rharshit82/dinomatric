@@ -1,0 +1,19 @@
+.horizontal{
+    width: 30%;
+    height: 2px;
+    margin-left:350px;
+}
+
+.mtt{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.addtitle{
+    font-size: 1.5rem;
+    font-weight: 500;
+}

@@ -1,5 +1,5 @@
 .feature{
-  background-color:#000000;
+  background-color:#ac8f69ff;
   margin-bottom: -30px;
 }
 
@@ -20,7 +20,7 @@ ul {
 
 footer ul li h4{
   font-size: 2rem;
-  color: #ac8f69ff;
+  color: black;
   padding-top:20px;
   font-family: "Oswald", "sans-serif";
 }
@@ -135,7 +135,7 @@ footer a:hover, footer ul li a:hover{
 .footer-social-overlap {
   position: relative;
   z-index: 2;
-  background: #000000;
+  background: #ac8f69ff;
   padding: 0 20px;
 }
 

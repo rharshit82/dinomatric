@@ -34,7 +34,7 @@ function Footer() {
               <li className="footer-icon-box"><i className="fa fa-envelope fa-1x footer-icon fa-inverse" aria-hidden="true"></i><a href='mailto:abc@gmail.com'>abc@gmail.com</a></li>
               <li className="footer-icon-box"><i className="fa fa-phone fa-1x footer-icon fa-inverse" aria-hidden="true"></i><a href='tel:9876543210'>9876543210</a></li>
               <li className="footer-icon-box"><i className="fa fa-map-marker fa-1x footer-icon fa-inverse" aria-hidden="true"></i><a href='!#'>Ghaziabad</a></li>
-              <li className="footer-icon-box2">If you have any queries feel free to <a href="!#" className="btn btn-primary btn-sm active" role="button" aria-pressed="true">CONTACT US</a></li>
+              <li className="footer-icon-box2 text-center">If you have any queries feel free to Contact us !!!!</li>
             </ul>
           </div>
         </div>

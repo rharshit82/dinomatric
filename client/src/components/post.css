@@ -1,0 +1,56 @@
+.mainpost{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mainpost h1{
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.mainpost h1{
+    font-weight: 400;
+}
+
+
+.Postss{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   height: auto; 
+   flex-direction: column;
+}
+
+.postid{
+    width: 80%;
+    height: auto;
+    padding: 20px 30px;
+    position: relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+    background-color: #ebca94;
+}
+
+
+.dinopic{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100px;
+}
+
+
+.postext{
+    text-align: left;
+    color: black!important;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.postdate{
+    text-align: left;
+    font-size: 12px;
+}
+
