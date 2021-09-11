@@ -1,8 +1,8 @@
 import './App.css';
 import HomeScreen from './screens/HomeScreen/HomeScreen'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/Navbar/Header'
+import Footer from './components/Footer/Footer'
 import Board from './components/whiteboard/board/Board';
 import ChromeDino from './screens/ChromeDino/ChromeDino';
 import DinoFun from './screens/DinoFun/DinoFun'
