@@ -4,15 +4,15 @@
   
   .whiteboard {
     width: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 600;
+    height: 500px;
+    position: relative;
+    border: 2px solid black;
   }
   
   .colors {
-    position: fixed;
+    position: absolute;
+    top: 55%;
+    left: 0;
   }
   
   .color {

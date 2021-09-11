@@ -134,6 +134,12 @@ const Board = () => {
 
   return (
     <div>
+
+      <h1 className="Dinohead my-3"> Dino Drawing </h1>
+      <p className="Dinopara">
+        Lets have a fun and start drawing
+      </p>
+
       <canvas ref={canvasRef} className="whiteboard" />
 
       <div ref={colorsRef} className="colors">
