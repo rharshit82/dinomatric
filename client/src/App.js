@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Board from './components/whiteboard/board/Board';
 import ChromeDino from './screens/ChromeDino/ChromeDino';
 import DinoFun from './screens/DinoFun/DinoFun'
+import HumanBlog from './screens/HumanBlog/HumanBlog';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
           <Route exact path='/dinodrawing' component={() => <Board />} />
           <Route exact path='/chromedino' component={() => <ChromeDino />} />
           <Route exact path='/dinofun' component={() => <DinoFun />} />
+          <Route exact path='/humanblog' component={() => <HumanBlog />} />
         </Switch>
       </main>
       <footer>

@@ -5,6 +5,11 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server);
 const apiRoutes = require('./routes/apiRoutes')
+const db = require('./db/db')
+
+require('dotenv').config()
+
+db()
 io.on('connection', onConnection);
 
 function onConnection(socket){
