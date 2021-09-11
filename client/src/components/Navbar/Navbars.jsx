@@ -4,6 +4,8 @@ import Button from "@material-ui/core/Button";
 import MenuIcon from '@material-ui/icons/Menu';
 import "./Header.css";
 import {Link} from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
+
 const Navbars = () => {
   const [Active, setActive] = useState(false);
   const [show, setShow] = useState(false);
@@ -15,7 +17,7 @@ const Navbars = () => {
   const navShow = () => {
     setShow(!show);
   };
-
+  const { user, isAuthenticated } = useAuth0();
   return (
     <div className={`Navbars ${show ? "ulsh" : ""}`}>
         <div className="containerss">
@@ -24,9 +26,10 @@ const Navbars = () => {
             </Button>
 
          <ul>
-            <li className="navlinks">
-              <Link to="/dinofun">DinoBlog</Link>
-            </li>
+           {isAuthenticated? <li className="navlinks">
+              <Link to="/humanblog">DinoBlog</Link>
+            </li>: null}
+            
             <li className="navlinks">
               <Link to="/dinodrawing">Dino Drawing</Link>
             </li>
