@@ -11,9 +11,9 @@ const HomeScreen = () => {
         height='400'
         src={`https://console.echoar.xyz/webar?key=ancient-field-9556&entry=8e0e559f-a46f-4859-80cf-2463bbd5ca6d`}
         title='YouTube video player'
-        frameborder='0'
+        frameBorder='0'
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        allowfullscreen
+        allowFullScreen
       ></iframe>
         </>
     )
