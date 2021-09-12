@@ -1,4 +1,14 @@
 .swiper{
-    height:20em;
+    height:auto;
+    padding: 20px;
     width:100%;
+    display: grid;
+    place-items: center;
+}
+
+.ALertss{
+    
+    background-color: rgb(219, 96, 75);
+    padding: 1rem 2rem ;
+    border-radius: 40px;
 }

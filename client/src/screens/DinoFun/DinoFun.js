@@ -24,7 +24,7 @@ const DinoFun = () => {
       });
     return (
         <div className="swiper" {...handlers}>
-           <h2 className="my-4">Do Not Swipe Down</h2>
+           <h2 className="my-4 ALertss">Do Not Swipe Down</h2>
             {swipeLeft? (<div><h3>Dinosaurs are a group of reptiles that have lived on Earth for about 245 million years</h3> <br /></div>) : null }
             { swipeRight?(<div><h3>Dinosaur fossils have been found on all seven continents.</h3>  <br /></div>): null }
            {swipeUp?(<div><h3>There are roughly 700 known species of extinct dinosaurs.</h3>  <br /></div>): null}

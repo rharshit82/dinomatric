@@ -1,0 +1,14 @@
+.Addposts{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.Addpost{
+    margin-top: 20px;
+    background-color: #ac8f69ff;
+    width: 60%;
+    cursor: pointer;
+    padding: 5px 0;
+    border-radius: 25px;
+}
