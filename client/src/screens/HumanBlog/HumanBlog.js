@@ -3,6 +3,7 @@ import Loading from '../../components/Loading'
 import Post from '../../components/Post'
 import Pagination from '../../components/Pagination'
 import axios from 'axios'
+import './Blog.css'
 import { LinkContainer } from 'react-router-bootstrap'
 const HumanBlog = () => {
 
@@ -37,8 +38,8 @@ const HumanBlog = () => {
   }
 
   return (
-    <div>
-      <LinkContainer to="/humanblog/addpost"><h3>Add Post</h3></LinkContainer>
+    <div className="Addposts">
+      <LinkContainer to="/humanblog/addpost"><h3 className="Addpost">Add Post</h3></LinkContainer>
       <div className='px-5 posts'>
           
           {posts === null ? (
