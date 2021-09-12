@@ -39,6 +39,12 @@ const Navbars = () => {
             <li className="navlinks">
               <Link to="/dinofun">DinoFun</Link>
             </li>
+            <li className="navlinks">
+              <Link to="/dinofacts">DinoFacts</Link>
+            </li>
+            <li className="navlinks">
+              <Link to="/dinoshowcase">Dino Showcase</Link>
+            </li>
            
          </ul>  
 

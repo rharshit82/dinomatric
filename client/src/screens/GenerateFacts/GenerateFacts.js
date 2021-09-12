@@ -17,8 +17,8 @@ const GenerateFacts = () => {
         getFact()
     }, [])
     const sendMessage = async () =>{
-        const msg = await axios.post('/api/sendmessage', {phone})
         setMessageSent(true)
+        const msg = await axios.post('/api/sendmessage', {phone})
     }
     return (
         <div>

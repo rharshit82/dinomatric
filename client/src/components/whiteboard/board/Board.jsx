@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import io from 'socket.io-client';
 import './style.css';
-
+import dino from './dino.jpg'
 
 const Board = () => {
   const canvasRef = useRef(null);
@@ -10,34 +10,28 @@ const Board = () => {
 
   useEffect(() => {
 
-    // --------------- getContext() method returns a drawing context on the canvas-----
 
     const canvas = canvasRef.current;
     const test = colorsRef.current;
     const context = canvas.getContext('2d');
 
-    // ----------------------- Colors --------------------------------------------------
 
     const colors = document.getElementsByClassName('color');
     console.log(colors, 'the colors');
     console.log(test);
-    // set the current color
     const current = {
       color: 'black',
     };
 
-    // helper that will update the current color
     const onColorUpdate = (e) => {
       current.color = e.target.className.split(' ')[1];
     };
 
-    // loop through the color elements and add the click event listeners
     for (let i = 0; i < colors.length; i++) {
       colors[i].addEventListener('click', onColorUpdate, false);
     }
     let drawing = false;
 
-    // ------------------------------- create the drawing ----------------------------
 
     const drawLine = (x0, y0, x1, y1, color, emit) => {
       context.beginPath();
@@ -61,7 +55,6 @@ const Board = () => {
       });
     };
 
-    // ---------------- mouse movement --------------------------------------
 
     const onMouseDown = (e) => {
       drawing = true;
@@ -82,7 +75,6 @@ const Board = () => {
       drawLine(current.x, current.y, e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY, current.color, true);
     };
 
-    // ----------- limit the number of events per second -----------------------
 
     const throttle = (callback, delay) => {
       let previousCall = new Date().getTime();
@@ -96,20 +88,17 @@ const Board = () => {
       };
     };
 
-    // -----------------add event listeners to our canvas ----------------------
 
     canvas.addEventListener('mousedown', onMouseDown, false);
     canvas.addEventListener('mouseup', onMouseUp, false);
     canvas.addEventListener('mouseout', onMouseUp, false);
     canvas.addEventListener('mousemove', throttle(onMouseMove, 10), false);
 
-    // Touch support for mobile devices
     canvas.addEventListener('touchstart', onMouseDown, false);
     canvas.addEventListener('touchend', onMouseUp, false);
     canvas.addEventListener('touchcancel', onMouseUp, false);
     canvas.addEventListener('touchmove', throttle(onMouseMove, 10), false);
 
-    // -------------- make the canvas fill its parent component -----------------
 
     const onResize = () => {
       canvas.width = window.innerWidth;
@@ -119,7 +108,6 @@ const Board = () => {
     window.addEventListener('resize', onResize, false);
     onResize();
 
-    // ----------------------- socket.io connection ----------------------------
     const onDrawingEvent = (data) => {
       const w = canvas.width;
       const h = canvas.height;
@@ -130,7 +118,6 @@ const Board = () => {
     socketRef.current.on('drawing', onDrawingEvent);
   }, []);
 
-  // ------------- The Canvas and color elements --------------------------
 
   return (
     <div>
@@ -139,7 +126,7 @@ const Board = () => {
       <p className="Dinopara">
         Lets have a fun and start drawing
       </p>
-
+      
       <canvas ref={canvasRef} className="whiteboard" />
 
       <div ref={colorsRef} className="colors">
@@ -149,6 +136,8 @@ const Board = () => {
         <div className="color blue" />
         <div className="color yellow" />
       </div>
+      <h3>Reference</h3>
+      <img src={dino} className="w-25" />
     </div>
   );
 };
