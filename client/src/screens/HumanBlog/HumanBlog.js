@@ -40,13 +40,7 @@ const HumanBlog = () => {
     <div>
       <LinkContainer to="/humanblog/addpost"><h3>Add Post</h3></LinkContainer>
       <div className='px-5 posts'>
-          <div>
-            <Pagination
-              postsPerPage={postsPerPage}
-              totalPosts={posts.length}
-              paginate={paginate}
-            />
-          </div>
+          
           {posts === null ? (
             <Loading />
           ) : posts.length === 0 ? (
@@ -55,7 +49,17 @@ const HumanBlog = () => {
             <Post posts={currentPosts} loading={loading} />
           )}
           
+          <div>
+           <Pagination
+              postsPerPage={postsPerPage}
+              totalPosts={posts.length}
+              paginate={paginate}
+            /> 
+           </div>  
+          
         </div>
+
+
     </div>
   )
 }
