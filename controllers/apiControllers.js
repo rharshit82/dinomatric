@@ -50,8 +50,8 @@ exports.getFact = (req,res) =>{
     res.send({fact: facts[number]})
 }
 exports.sendMessage = (req,res) =>{
-  const accountSid = "ACe1f018d072076965270a159889ddf800";
-const authToken = "f11894d4fc3d6931e5455281f577850b";
+  const accountSid = process.env.accountSid;
+const authToken = process.env.authToken;
 const client = require('twilio')(accountSid, authToken);
   const {phone}= req.body;
   console.log(phone)
