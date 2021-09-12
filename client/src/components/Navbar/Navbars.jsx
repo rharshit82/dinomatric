@@ -45,6 +45,9 @@ const Navbars = () => {
             <li className="navlinks">
               <Link to="/dinoshowcase">Dino Showcase</Link>
             </li>
+            <li className="navlinks">
+              <Link to="/prehistoricquiz">Prehistoric Quiz</Link>
+            </li>
            
          </ul>  
 
