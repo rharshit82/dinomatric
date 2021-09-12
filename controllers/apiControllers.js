@@ -38,3 +38,28 @@ exports.fetchPost = async (req,res) =>{
       return res.status(500).json({ message: 'Some Error Occured' })
     }
 }
+const facts = ["Dinosaurs were around in the Mesozoic Era or The Age of Dinosaurs",
+                    "There were more than 700 species of Dinosaurs",
+                    "The word dinosaur came from an English palaeontologist Richard",
+                    "Tyrannosaurus Rex was the most ferocious dinosaur",
+                    "Lizards, turtles, snakes and crocodiles all descend from dinosaurs",
+                    "An astroid hit and Dinosaurs became extinct."
+                  ]
+const number = Math.floor((Math.random() * 6));
+exports.getFact = (req,res) =>{
+    res.send({fact: facts[number]})
+}
+exports.sendMessage = (req,res) =>{
+  const accountSid = "ACe1f018d072076965270a159889ddf800";
+const authToken = "f11894d4fc3d6931e5455281f577850b";
+const client = require('twilio')(accountSid, authToken);
+  const {phone}= req.body;
+  console.log(phone)
+client.messages
+  .create({
+     body: facts[number],
+     from: '+15187206078',
+     to: phone
+   })
+  .then(message => res.send("Message sent"));
+}
